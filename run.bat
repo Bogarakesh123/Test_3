@@ -1,5 +1,8 @@
 @echo off
-REM Check Python installation
+REM Set the PATH to include the Python installation directory
+set PATH=C:\Users\b.rakesh\AppData\Local\Microsoft\WindowsApps;%PATH%
+
+REM Verify Python is accessible
 python --version
 if %ERRORLEVEL% NEQ 0 (
     echo "Python is not installed or not in PATH."
@@ -13,8 +16,8 @@ if %ERRORLEVEL% NEQ 0 (
     pip install pytest
 )
 
-REM Run pytest using full path
-C:\Users\b.rakesh\AppData\Local\Microsoft\WindowsApps\python.exe -v -s testcases\test_03.py
+REM Run pytest
+pytest -v -s testcases\test_03.py
 if %ERRORLEVEL% NEQ 0 (
     echo "Pytest failed."
     exit /b 1

@@ -1,5 +1,10 @@
 @echo off
+REM Set up environment (adjust paths as needed)
+set CONDA_HOME=C:\ProgramData\anaconda3
+set PATH=%CONDA_HOME%\Scripts;%PATH%
+
 REM Check Python version
-"C:\Users\<YourUsername>\AppData\Local\Programs\Python\Python<version>\python.exe" --version
+python --version
+
 REM Run pytest
-"C:\Users\<YourUsername>\AppData\Local\Programs\Python\Python<version>\Scripts\pytest.exe" -v -s testcases\test_03.py
+pytest -v -s testcases\test_03.py
